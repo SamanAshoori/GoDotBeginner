@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://caw54ea2uo0lx"]
+[gd_scene load_steps=15 format=3 uid="uid://caw54ea2uo0lx"]
 
+[ext_resource type="Script" uid="uid://cl2ca0ahnuljy" path="res://scripts/game_manager.gd" id="1_gee14"]
 [ext_resource type="PackedScene" uid="uid://byqjgr6di2v5b" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://o3h1oaq87alh" path="res://scenes/platform.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://6jiqk8f56akx" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
 [ext_resource type="PackedScene" uid="uid://eps11yl8xop3" path="res://scenes/coin.tscn" id="4_lbhrr"]
 [ext_resource type="PackedScene" uid="uid://dwv21lg56r7qk" path="res://scenes/killzone.tscn" id="5_iywne"]
 [ext_resource type="PackedScene" uid="uid://qr7u6rtbxwno" path="res://scenes/slime_green.tscn" id="6_p57ef"]
+[ext_resource type="FontFile" uid="uid://c2v06yjuykqx7" path="res://assets/fonts/PixelOperator8.ttf" id="7_u5sy4"]
 
 [sub_resource type="Animation" id="Animation_iywne"]
 length = 0.001
@@ -213,6 +215,20 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
 [node name="Game" type="Node2D"]
 
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_gee14")
+
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 819.0
+offset_top = 68.0
+offset_right = 969.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "You Collected X Coins"
+autowrap_mode = 2
+
 [node name="Coins" type="Node" parent="."]
 
 [node name="coin" parent="Coins" instance=ExtResource("4_lbhrr")]
@@ -275,3 +291,12 @@ shape = SubResource("WorldBoundaryShape2D_iywne")
 
 [node name="slime_green" parent="." instance=ExtResource("6_p57ef")]
 position = Vector2(201, 100)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 136.0
+offset_top = 54.0
+offset_right = 176.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("7_u5sy4")
+theme_override_font_sizes/font_size = 8
+text = "Hello"
