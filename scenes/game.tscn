@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://caw54ea2uo0lx"]
+[gd_scene load_steps=10 format=3 uid="uid://caw54ea2uo0lx"]
 
 [ext_resource type="PackedScene" uid="uid://byqjgr6di2v5b" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://o3h1oaq87alh" path="res://scenes/platform.tscn" id="2_lnu2h"]
 [ext_resource type="Texture2D" uid="uid://6jiqk8f56akx" path="res://assets/sprites/world_tileset.png" id="2_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://eps11yl8xop3" path="res://scenes/coin.tscn" id="4_lbhrr"]
 
 [sub_resource type="Animation" id="Animation_lnu2h"]
 resource_name = "move"
@@ -233,3 +234,15 @@ layer_0/tile_data = PackedInt32Array(65538, 0, 0, 65537, 0, 0, 65536, 0, 0, 1310
 
 [node name="Platform2" parent="." instance=ExtResource("2_lnu2h")]
 position = Vector2(530, 143)
+
+[node name="coin" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(680, 178)
+
+[node name="coin2" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(391, 176)
+
+[node name="coin3" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(531, 128)
+
+[node name="coin4" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(406, 77)
