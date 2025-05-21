@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://byqjgr6di2v5b"]
+[gd_scene load_steps=27 format=3 uid="uid://byqjgr6di2v5b"]
 
 [ext_resource type="Texture2D" uid="uid://dp06scdaui8gt" path="res://assets/sprites/knight.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bkmsm7mt2s8bj" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://ccha0cemgox0c" path="res://scripts/grapple_controller.gd" id="3_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -185,3 +186,14 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -5)
 shape = SubResource("CircleShape2D_fjrip")
+
+[node name="Grapple_Controller" type="Node2D" parent="."]
+script = ExtResource("3_qhqgy")
+
+[node name="RayCast2D" type="RayCast2D" parent="Grapple_Controller"]
+target_position = Vector2(700, 0)
+
+[node name="Line2D" type="Line2D" parent="Grapple_Controller"]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 2.0
+default_color = Color(0, 0, 0, 1)
